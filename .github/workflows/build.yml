@@ -131,7 +131,7 @@ jobs:
               USEARCHS="$USEARCHS -arch $ARCH"
             fi
           done
-          export CFLAGS="$USEARCHS -isysroot $SDKDIR"
+          export CFLAGS="$USEARCHS -isysroot $SDKDIR -mmacosx-version-min=10.8"
           echo "Using CFLAGS: $CFLAGS"
           ./autogen.sh PKG_CONFIG_PATH=/usr/local/lib/pkgconfig --enable-debug \
               openssl_CFLAGS="-I${{ env.DEPSDIR }}/libressl-${{ env.LIBRESSL_VER }}/include" \
